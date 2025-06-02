@@ -141,7 +141,7 @@ const LanguageDropdown = ({
 <DropD>
   <div className="dropdown">
     <button onClick={() => setOpen(!open)} className="toggle">
-      en | es
+      EN | ES
     </button>
     {open && (
       <ul className="menu">
