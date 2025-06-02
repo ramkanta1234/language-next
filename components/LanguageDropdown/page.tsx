@@ -140,13 +140,13 @@ const LanguageDropdown = ({
 
 <DropD>
   <div className="dropdown">
-    <button onClick={() => setOpen(!open)} className="toggle">
+    <button onClick={() => setOpen(!open)} className="toggle" >
       EN | ES
     </button>
     {open && (
-      <ul className="menu">
+      <ul className="menu" onMouseLeave={() => setOpen(false)}>
         {languages.map((lang) => (
-          <li key={lang.code} onClick={() => handleChange(lang)}>
+          <li key={lang.code} onClick={() => handleChange(lang)} >
               <img src={lang.icon} alt={lang.code} />
             {lang.label}
           </li>
