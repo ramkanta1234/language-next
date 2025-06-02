@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "welcome": "Welcome to SociClip",
+    "headline1": "MONETIZE YOUR HOTTEST MOMENTS.",
+    "headline2": "OWN EVERY FRAME.",
+    "launch": "LAUNCHING OCTOBER 2025.",
+    "question": "Are you charging subscriptions on other platforms, working hard for tips, locked behind paywalls and algorithms?",
+    "subheadline": "With SOCICLIP, you don’t rent content, you mint it.",
+    "cta_button": "SELL IT. SCALE IT."
+  },
+  "digitalGold": {
+    "headline": "Turn Your Most Magnetic Moments Into Digital Gold",
+    "subheadline": "You're already putting in the work. You film. You post. You build your following. But how much are you really keeping?",
+    "intro": "SociClip gives you a whole new lane:",
+    "benefits": [
+      "Create dynamic video content directly on our platform",
+      "Clip and mint your best scenes as NFTs—choose your moment, own it forever",
+      "Sell limited edition video clips to fans and collectors in your own custom storefront",
+      "Blast your content across Instagram, Facebook, X, and TikTok from one single dashboard",
+      "Earn more than likes, tips, or monthly subs—you’re selling ownership of exclusive content"
+    ],
+    "cta_button": "BECOME A FOUNDER NOW"
+  },
+  "whosItFor": {
+    "headline": "Who’s It For? If you’re…",
+    "roles": [
+      {
+        "title": "A model, influencer, or performer with a loyal fan base"
+      },
+      {
+        "title": "A musician or artist sharing moments that matter"
+      },
+      {
+        "title": "A creator building daily content and short-form videos"
+      }
+    ],
+    "summary": "Then you’re exactly who we built SociClip for.",
+    "note": "Whether you go viral or keep it niche—your fans will pay to own your best moments."
+  },
+  "earlyAccess": {
+    "headline": "BE FIRST IN LINE FOR SOCICLIP!",
+    "subheadline": "Get exclusive early access and become a platform founder.",
+    "cta_button": "BECOME A FOUNDER NOW"
+  },
+  "noMonthlyTrap": {
+    "headline": "No Monthly Trap.",
+    "description": "Your one-time early access founder pass gets you in with lifetime perks, zero monthly fees, and early tools to mint, market, and monetize."
+  },
+  "futureMonetization": {
+    "headline": "The Future of Monetization Is Ownership",
+    "description": "Web2 creators make cents on streams. SociClip flips the model—you mint and sell your best moments directly to fans as collectible assets."
+  },
+  "massAccess": {
+    "headline": "GET IN BEFORE THE MASSES.",
+    "description": "SociClip is launching soon. Early access means you’re first to own tools, features, and visibility before we go wide."
+  },
+  "finalCTA": {
+    "headline": "This Summer Changes Everything.",
+    "subheadline": "Monetize your content with ownership, not just subscriptions.",
+    "cta_button": "BECOME A FOUNDER NOW"
+  }
+}

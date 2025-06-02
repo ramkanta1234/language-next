@@ -1,0 +1,62 @@
+{
+  "hero": {
+    "welcome": "Bienvenido a SociClip",
+    "headline1": "MONETIZA TUS MOMENTOS MÁS CALIENTES.",
+    "headline2": "POSEE CADA FOTOGRAMA.",
+    "launch": "LANZAMIENTO EN OCTUBRE DE 2025.",
+    "question": "¿Estás cobrando suscripciones en otras plataformas, trabajando duro por propinas, atrapado tras muros de pago y algoritmos?",
+    "subheadline": "Con SOCICLIP, no alquilas contenido, lo acuñas.",
+    "cta_button": "VÉNDELO. ESCÁLALO."
+  },
+  "digitalGold": {
+    "headline": "Convierte Tus Momentos Más Magnéticos en Oro Digital",
+    "subheadline": "Ya estás haciendo el trabajo. Filmas. Publicas. Construyes tu audiencia. ¿Pero cuánto estás realmente ganando?",
+    "intro": "SociClip te ofrece una vía completamente nueva:",
+    "benefits": [
+      "Crea contenido de video dinámico directamente en nuestra plataforma",
+      "Recorta y acuña tus mejores escenas como NFTs—elige tu momento, hazlo tuyo para siempre",
+      "Vende clips de video de edición limitada a fans y coleccionistas en tu propia tienda personalizada",
+      "Comparte tu contenido en Instagram, Facebook, X y TikTok desde un solo panel de control",
+      "Gana más que 'me gusta', propinas o suscripciones mensuales—estás vendiendo propiedad exclusiva de contenido"
+    ],
+    "cta_button": "CONVIÉRTETE EN FUNDADOR AHORA"
+  },
+  "whosItFor": {
+    "headline": "¿Para Quién Es? Si eres…",
+    "roles": [
+      {
+        "title": "Una modelo, influencer o artista con una base de fans leales"
+      },
+      {
+        "title": "Un músico o artista que comparte momentos importantes"
+      },
+      {
+        "title": "Un creador que produce contenido diario y videos cortos"
+      }
+    ],
+    "summary": "Entonces, SociClip fue hecho para ti.",
+    "note": "Ya sea que te vuelvas viral o mantengas tu nicho—tus fans pagarán por poseer tus mejores momentos."
+  },
+  "earlyAccess": {
+    "headline": "¡SÉ EL PRIMERO EN LA FILA PARA SOCICLIP!",
+    "subheadline": "Obtén acceso exclusivo anticipado y conviértete en fundador de la plataforma.",
+    "cta_button": "CONVIÉRTETE EN FUNDADOR AHORA"
+  },
+  "noMonthlyTrap": {
+    "headline": "Sin Trampa de Suscripción Mensual.",
+    "description": "Tu pase de fundador por acceso anticipado único te da beneficios de por vida, sin cuotas mensuales, y acceso temprano a herramientas para acuñar, promocionar y monetizar."
+  },
+  "futureMonetization": {
+    "headline": "El Futuro de la Monetización Es la Propiedad",
+    "description": "Los creadores en Web2 ganan centavos por reproducciones. SociClip cambia el modelo—tú acuñas y vendes tus mejores momentos directamente a los fans como activos coleccionables."
+  },
+  "massAccess": {
+    "headline": "ENTRA ANTES QUE LAS MASAS.",
+    "description": "SociClip se lanza pronto. El acceso anticipado significa que eres el primero en tener herramientas, funciones y visibilidad antes de abrirnos al público."
+  },
+  "finalCTA": {
+    "headline": "Este Verano Cambia Todo.",
+    "subheadline": "Monetiza tu contenido con propiedad, no solo con suscripciones.",
+    "cta_button": "CONVIÉRTETE EN FUNDADOR AHORA"
+  }
+}
