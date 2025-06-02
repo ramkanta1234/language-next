@@ -163,7 +163,16 @@ const BannerMainInner = styled.div`
   padding: 45px 0 80px;
   background-repeat: no-repeat;
   .banner_flx_sec{display:flex;    justify-content: space-between;
-    align-items: center;}
+        align-items: flex-start;}
+    .banner_flx_sec select{    padding: 10px 20px;
+    font-size: 16px;
+    line-height: 24px;
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    padding-left: 10px;}
 
   @media only screen and (max-width: 1599px) {
   

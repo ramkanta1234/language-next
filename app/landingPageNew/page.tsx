@@ -20,7 +20,7 @@ const LandingPage = ({campaignDetails}: any) => {
 
     return (
         <>
-         <IconButton
+         {/* <IconButton
          onClick={() => window.scrollTo(0, 0)}
          sx={{
             backgroundColor: '#fe4264',
@@ -36,7 +36,7 @@ const LandingPage = ({campaignDetails}: any) => {
             },
         }}>
             <KeyboardArrowUpIcon />
-        </IconButton>
+        </IconButton> */}
           <BannerSec ref={formRef}/>
           <WhoIsItSec/>
           <BeTheFirstInSC campaignDetails={campaignDetails} ref={formRef}/>
