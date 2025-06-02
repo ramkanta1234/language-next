@@ -170,7 +170,8 @@ const BannerMainInner = styled.div`
     outline: none;
     border: 1px solid #ccc;
     background-color: #fff;
-    color: #333;
+    color: #9966cc;
+    font-weight: 600;
     cursor: pointer;
     padding-left: 10px;}
 
