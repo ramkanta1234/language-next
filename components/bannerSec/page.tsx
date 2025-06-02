@@ -1,10 +1,35 @@
 import { Button } from "@mui/material";
 import Image from "next/image";
-import React, { forwardRef } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 import styled from "styled-components";
 import LanguageDropdown from "../LanguageDropdown/page";
 
+// Import your translation files
+import enTranslations from "@/app/landingpage1/en.json";
+import esTranslations from "@/app/landingpage1/es.json";
+
 const BannerSec = forwardRef<HTMLDivElement>((props, ref) => {
+  const [translations, setTranslations] = useState(enTranslations);
+  const [currentLanguage, setCurrentLanguage] = useState('en');
+
+  // Handle language change
+  useEffect(() => {
+    const handleLanguageChange = () => {
+      const lang = document.cookie.split('; ').find(row => row.startsWith('lang='))?.split('=')[1] || 'en';
+      setCurrentLanguage(lang);
+      setTranslations(lang === 'es' ? esTranslations : enTranslations);
+    };
+
+    // Initial load
+    handleLanguageChange();
+
+    // Listen for language changes
+    window.addEventListener('languageChanged', handleLanguageChange);
+
+    return () => {
+      window.removeEventListener('languageChanged', handleLanguageChange);
+    };
+  }, []);
 
   const handleScrollToForm = () => {
     if (ref && typeof ref !== 'function' && ref.current) {
@@ -18,43 +43,39 @@ const BannerSec = forwardRef<HTMLDivElement>((props, ref) => {
         <BannerMainInner>
           <CommonWidth>
             <div className="banner_flx_sec">
-            <Logo>
-              <Image
-                src="/image/sociclip_main_logo.webp"
-                alt=""
-                width={298}
-                height={201}
-              />
-            </Logo>
-            <LanguageDropdown />
+              <Logo>
+                <Image
+                  src="/image/sociclip_main_logo.webp"
+                  alt=""
+                  width={298}
+                  height={201}
+                />
+              </Logo>
+              <LanguageDropdown />
             </div>
 
             <BannerTxtSec>
-              <h5>Welcome to SociClip</h5>
+              <h5>{translations.hero.welcome}</h5>
               <div className="bnnr_lrg_txt">
-                <h1>Monetize Your Hottest Moments. </h1>
-                <h1>Own Every Frame.</h1>
+                <h1>{translations.hero.headline1}</h1>
+                <h1>{translations.hero.headline2}</h1>
                 <h1>
-                  Launching <span>october 2025.</span>
+                  {translations.hero.launch}
                 </h1>
               </div>
               <div className="txt_h5">
                 <h5>
-                  Are you charging subscriptions on other platforms, working
-                  hard for tips, locked behind paywalls and{" "}
-                  <span>algorithms?</span>
+                  {translations.hero.question}
                 </h5>
               </div>
               <div className="flx_wrp">
-              <h6>
-                With <span>SOCICLIP</span>, you don’t rent your content. you <span> mint it.</span>
-              </h6>
-              <Button onClick={handleScrollToForm} className="red_btn sell_btn">Sell it. Scale it.</Button>
+                <h6>
+                  {translations.hero.subheadline}
+                </h6>
+                <Button onClick={handleScrollToForm} className="red_btn sell_btn">
+                  {translations.hero.cta_button}
+                </Button>
               </div>
-              {/* <h6 className="aftr_contnt">
-                {" "}
-                You <span>mint it. Sell it. Scale it.</span>
-              </h6> */}
             </BannerTxtSec>
 
             <Vdocontnr>
@@ -81,76 +102,32 @@ const BannerSec = forwardRef<HTMLDivElement>((props, ref) => {
                   height={150}
                   width={188}
                 />
-                <h1>Turn Your Most Magnetic Moments Into Digital Gold</h1>
+                <h1>{translations.digitalGold.headline}</h1>
                 <h5>
-                You're already putting in the work. You film. You post. You build your following. But how much are you really keeping?
-
+                  {translations.digitalGold.subheadline}
                 </h5>
               </Bnnr2ndTopTxtSec>
               <Bnnr2ndLftPaddSec>
                 <section className="second_lft_padd_inn">
-                  <h3>SociClip gives you a whole new lane:</h3>
+                  <h3>{translations.digitalGold.intro}</h3>
                   <div className="txt_icon_sec">
-                    <p>
-                      <Image
-                        src="/image/vdo_logo.webp"
-                        width={70}
-                        height={80}
-                        alt="Image"
-                      />
-                      <span>
-                      Create dynamic video content directly on our platform
-                      </span>
-                    </p>
-                    <p>
-                      <Image
-                        src="/image/clip_logo.webp"
-                        width={52}
-                        height={82}
-                        alt="Image"
-                      />
-                      <span>
-                      Clip and mint your best scenes as NFTs—choose your moment, set your price
-                      </span>
-                    </p>
-                    <p>
-                      <Image
-                        src="/image/dollar_s_logo.webp"
-                        width={71}
-                        height={72}
-                        alt="Image"
-                      />
-                      <span>
-                      Sell limited edition video clips to fans and collectors 
-                      in your own custom storefront
-                      </span>
-                    </p>
-                    <p>
-                      <Image
-                        src="/image/globe_logo.webp"
-                        width={71}
-                        height={71}
-                        alt="Image"
-                      />
-                      <span>
-                      Blast your content across Instagram, Facebook, X, and TikTok
-                      </span>
-                    </p>
-                    <p>
-                      <Image
-                        src="/image/launcher_logo.webp"
-                        width={78}
-                        height={79}
-                        alt="Image"
-                      />
-                      <span>
-                      Earn more than tips, tokens, or monthly subs—you’re selling ownership of exclusive content
-                      </span>
-                    </p>
+                    {translations.digitalGold.benefits.map((benefit, index) => (
+                      <p key={index}>
+                        <Image
+                          src={`/image/${['vdo_logo', 'clip_logo', 'dollar_s_logo', 'globe_logo', 'launcher_logo'][index]}.webp`}
+                          width={70}
+                          height={80}
+                          alt="Image"
+                        />
+                        <span>{benefit}</span>
+                      </p>
+                    ))}
                   </div>
                 </section>
               </Bnnr2ndLftPaddSec>
-              <Button onClick={handleScrollToForm} className="founder_btn red_btn">Become A Founder Now</Button>
+              <Button onClick={handleScrollToForm} className="founder_btn red_btn">
+                {translations.digitalGold.cta_button}
+              </Button>
             </Banner2ndSec>
           </CommonWidth>
           <Image

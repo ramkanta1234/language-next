@@ -1,9 +1,32 @@
 import { Grid } from '@mui/material'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import enTranslations from '@/app/landingpage1/en.json';
+import esTranslations from '@/app/landingpage1/es.json';
 
 const WhoIsItSec = () => {
+  const [translations, setTranslations] = useState(enTranslations);
+  const [currentLanguage, setCurrentLanguage] = useState('en');
+
+  useEffect(() => {
+    const handleLanguageChange = () => {
+      const lang = document.cookie.split('; ').find(row => row.startsWith('lang='))?.split('=')[1] || 'en';
+      setCurrentLanguage(lang);
+      setTranslations(lang === 'es' ? esTranslations : enTranslations);
+    };
+
+    // Initial load
+    handleLanguageChange();
+
+    // Listen for language changes
+    window.addEventListener('languageChanged', handleLanguageChange);
+
+    return () => {
+      window.removeEventListener('languageChanged', handleLanguageChange);
+    };
+  }, []);
+
   return (
     <>
       <Block2Sec>
@@ -18,46 +41,41 @@ const WhoIsItSec = () => {
                 height={150}
                 alt="Image"
               />
-                <h1>Who’s It For? <span>If you’re…</span></h1>
+                <h1>{translations.whosItFor.headline}</h1>
             </TopTxtSec>
 
             <Grid container spacing={3} className="flex_grid">
-               <Grid size={{ xs: 12, sm:6,lg: 4 }} className="grid_item">
+               <Grid size={{ xs: 12, sm:6, lg: 4 }} className="grid_item">
                 <div className='img_txt_wrpr'>
-                    <h2>A <span>model, influencer, or 
-                    performer</span> with a loyal fan base</h2>
+                    <h2>{translations.whosItFor.roles[0].title}</h2>
                     <div className='img_wrp'>
                         <Image src="/image/blk2_img1_sc.webp" width={714} height={525} alt='Image'/>
                     </div>
                 </div>
                </Grid>
 
-               <Grid size={{  xs: 12, sm:6, lg: 4  }} className="grid_item">
+               <Grid size={{ xs: 12, sm:6, lg: 4 }} className="grid_item">
                 <div className='img_txt_wrpr'>
-                    <h2>A <span>musician or artist</span> sharing 
-                    moments that matter</h2>
+                    <h2>{translations.whosItFor.roles[1].title}</h2>
                     <div className='img_wrp'>
                         <Image src="/image/blk2_img2.webp" width={714} height={525} alt='Image'/>
                     </div>
                 </div>
                </Grid>
 
-               <Grid size={{  xs: 12,sm:6, lg: 4  }} className="grid_item">
+               <Grid size={{ xs: 12, sm:6, lg: 4 }} className="grid_item">
                 <div className='img_txt_wrpr'>
-                    <h2>A <span>creator</span> building daily 
-                    content and short-form videos</h2>
+                    <h2>{translations.whosItFor.roles[2].title}</h2>
                     <div className='img_wrp'>
                         <Image src="/image/blk2_img3.webp" width={714} height={525} alt='Image'/>
                     </div>
                 </div>
                </Grid>
-           
-
             </Grid>
 
             <TextSecBottom>
-               <h4> Then you’re exactly who we built SociClip for.</h4>
-               <h3>Whether you go viral or keep it niche—<span>your fans will pay to own your best moments.</span></h3>
+               <h4>{translations.whosItFor.summary}</h4>
+               <h3>{translations.whosItFor.note}</h3>
             </TextSecBottom>
 
         </Block2SecInn>
@@ -67,7 +85,8 @@ const WhoIsItSec = () => {
   )
 }
 
-export default WhoIsItSec
+export default WhoIsItSec;
+
 
 
 const Block2Sec = styled.div`
