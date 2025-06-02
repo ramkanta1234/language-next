@@ -1,0 +1,21 @@
+{
+  "WhoIsItSection": {
+    "title": "Who's It For?",
+    "subtitle": "If you're...",
+    "items": [
+      {
+        "description": "A <span>model, influencer, or performer</span> with a loyal fan base"
+      },
+      {
+        "description": "A <span>musician or artist</span> sharing moments that matter"
+      },
+      {
+        "description": "A <span>creator</span> building daily content and short-form videos"
+      }
+    ],
+    "footer": {
+      "line1": "Then you're exactly who we built SociClip for.",
+      "line2": "Whether you go viral or keep it niche—<span>your fans will pay to own your best moments.</span>"
+    }
+  }
+}

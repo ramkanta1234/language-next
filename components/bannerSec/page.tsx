@@ -1,0 +1,863 @@
+import { Button } from "@mui/material";
+import Image from "next/image";
+import React, { forwardRef } from "react";
+import styled from "styled-components";
+import LanguageDropdown from "../LanguageDropdown/page";
+
+const BannerSec = forwardRef<HTMLDivElement>((props, ref) => {
+
+  const handleScrollToForm = () => {
+    if (ref && typeof ref !== 'function' && ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  return (
+    <div>
+      <BannerMain>
+        <BannerMainInner>
+          <CommonWidth>
+            <div className="banner_flx_sec">
+            <Logo>
+              <Image
+                src="/image/sociclip_main_logo.webp"
+                alt=""
+                width={298}
+                height={201}
+              />
+            </Logo>
+            <LanguageDropdown />
+            </div>
+
+            <BannerTxtSec>
+              <h5>Welcome to SociClip</h5>
+              <div className="bnnr_lrg_txt">
+                <h1>Monetize Your Hottest Moments. </h1>
+                <h1>Own Every Frame.</h1>
+                <h1>
+                  Launching <span>october 2025.</span>
+                </h1>
+              </div>
+              <div className="txt_h5">
+                <h5>
+                  Are you charging subscriptions on other platforms, working
+                  hard for tips, locked behind paywalls and{" "}
+                  <span>algorithms?</span>
+                </h5>
+              </div>
+              <div className="flx_wrp">
+              <h6>
+                With <span>SOCICLIP</span>, you don’t rent your content. you <span> mint it.</span>
+              </h6>
+              <Button onClick={handleScrollToForm} className="red_btn sell_btn">Sell it. Scale it.</Button>
+              </div>
+              {/* <h6 className="aftr_contnt">
+                {" "}
+                You <span>mint it. Sell it. Scale it.</span>
+              </h6> */}
+            </BannerTxtSec>
+
+            <Vdocontnr>
+              <iframe
+                width="640"
+                height="360"
+                src="https://www.youtube.com/embed/NNQLJcJEzv0"
+                title="YouTube Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </Vdocontnr>
+          </CommonWidth>
+        </BannerMainInner>
+        <BannerMainInner2>
+          <CommonWidth>
+            <Banner2ndSec>
+              <Bnnr2ndTopTxtSec>
+                <Image
+                  className="abs_diamond_img"
+                  src="/image/diamond_img.webp"
+                  alt=""
+                  height={150}
+                  width={188}
+                />
+                <h1>Turn Your Most Magnetic Moments Into Digital Gold</h1>
+                <h5>
+                You're already putting in the work. You film. You post. You build your following. But how much are you really keeping?
+
+                </h5>
+              </Bnnr2ndTopTxtSec>
+              <Bnnr2ndLftPaddSec>
+                <section className="second_lft_padd_inn">
+                  <h3>SociClip gives you a whole new lane:</h3>
+                  <div className="txt_icon_sec">
+                    <p>
+                      <Image
+                        src="/image/vdo_logo.webp"
+                        width={70}
+                        height={80}
+                        alt="Image"
+                      />
+                      <span>
+                      Create dynamic video content directly on our platform
+                      </span>
+                    </p>
+                    <p>
+                      <Image
+                        src="/image/clip_logo.webp"
+                        width={52}
+                        height={82}
+                        alt="Image"
+                      />
+                      <span>
+                      Clip and mint your best scenes as NFTs—choose your moment, set your price
+                      </span>
+                    </p>
+                    <p>
+                      <Image
+                        src="/image/dollar_s_logo.webp"
+                        width={71}
+                        height={72}
+                        alt="Image"
+                      />
+                      <span>
+                      Sell limited edition video clips to fans and collectors 
+                      in your own custom storefront
+                      </span>
+                    </p>
+                    <p>
+                      <Image
+                        src="/image/globe_logo.webp"
+                        width={71}
+                        height={71}
+                        alt="Image"
+                      />
+                      <span>
+                      Blast your content across Instagram, Facebook, X, and TikTok
+                      </span>
+                    </p>
+                    <p>
+                      <Image
+                        src="/image/launcher_logo.webp"
+                        width={78}
+                        height={79}
+                        alt="Image"
+                      />
+                      <span>
+                      Earn more than tips, tokens, or monthly subs—you’re selling ownership of exclusive content
+                      </span>
+                    </p>
+                  </div>
+                </section>
+              </Bnnr2ndLftPaddSec>
+              <Button onClick={handleScrollToForm} className="founder_btn red_btn">Become A Founder Now</Button>
+            </Banner2ndSec>
+          </CommonWidth>
+          <Image
+            className="abs_black_dressed_girl"
+            src="/image/black_dressed_girl.webp"
+            width={809}
+            height={946}
+            alt="Image"
+          />
+        </BannerMainInner2>
+      </BannerMain>
+    </div>
+  );
+});
+
+export default BannerSec;
+
+// banner 1st sec--------------------------//
+
+const BannerMain = styled.div`
+  background: url(/image/sclip_bnnr_bg_1.webp), url(/image/bnnr_bg_2.webp), #fff;
+  background-repeat: no-repeat;
+  background-position: top right, bottom left, center;
+  background-size: 100% auto, 100% 50%;
+
+  padding-bottom: 140px;
+  overflow: hidden;
+
+  @media only screen and (max-width: 1399px){
+    padding-bottom: 40px;
+  }
+      
+  @media only screen and (max-width: 1199px) {
+    padding-bottom: 45px;
+    background: linear-gradient(
+      79deg,
+      rgba(124, 199, 240, 1) 0%,
+      rgba(253, 238, 255, 1) 50%,
+      rgba(226, 159, 223, 1) 100%
+    );
+  }
+
+   @media only screen and (max-width: 499px){
+        padding: 20px 0;
+    }
+`;
+const CommonWidth = styled.div`
+  width: 1720px;
+  margin: 0 auto;
+  max-width: 96%;
+
+  @media only screen and (max-width:768px){
+   max-width: 94%;
+  }
+`;
+const BannerMainInner = styled.div`
+  background: url(/image/banner_ladies_img.webp);
+  background-position: top right -28px;
+  background-size: auto 100%;
+  padding: 45px 0 80px;
+  background-repeat: no-repeat;
+  .banner_flx_sec{display:flex;    justify-content: space-between;
+    align-items: center;}
+
+  @media only screen and (max-width: 1599px) {
+  
+  background-position: top right -75px;
+  }
+
+   @media only screen and (max-width: 1399px){
+      padding: 45px 0 50px;
+   }
+    
+
+  @media only screen and (max-width: 1199px) {
+    background: none;
+    padding: 30px 0 40px;
+  }
+
+   @media only screen and (max-width: 499px){
+      padding: 0px 0 30px;
+    }
+`;
+
+const Logo = styled.div`
+  width: fit-content;
+  margin-bottom: 30px;
+  img {
+    display: block;
+  }
+  @media only screen and (max-width: 1199px) {
+    width: 200px;
+    img {
+      width: 100%;
+    }
+  }
+
+   @media only screen and (max-width: 499px){
+    width: 150px; margin:0 auto 20px;
+    }
+`;
+
+const BannerTxtSec = styled.div`
+  h5 {
+    font-size: 48px;
+    line-height: 54px;
+    color: #474848;
+    font-weight: 400;
+    margin-bottom: 30px;
+    font-family: "Roboto", sans-serif;
+  }
+  h5 span {
+    color: #9966cc;
+  }
+
+  .bnnr_lrg_txt {
+    width: 73%;
+  }
+
+  .bnnr_lrg_txt h1 {
+    font-size: 65px;
+    line-height: 71px;
+    color: #9966cc;
+    font-weight: 700;
+    position: relative;
+    padding-left: 25px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+  }
+
+  .bnnr_lrg_txt h1 span {
+    color: #fe4264;
+  }
+
+  .bnnr_lrg_txt h1::before {
+    content: "";
+    position: absolute;
+    background: url(/image/txt_b4_img.webp);
+    width: 15px;
+    height: 75%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-size: 100% 100%;
+  }
+  .txt_h5 {
+    width: 55%;
+  }
+
+  h6 {
+    font-size: 36px;
+    line-height: 42px;
+    color: #000;
+    font-weight: 400;
+    margin-bottom: 0;
+    width: fit-content;
+    width:30%;
+    margin-right:10px;
+  }
+  h6 span {
+    color: #9966cc;
+    font-weight: 600;
+  }
+  h6.aftr_contnt {
+    position: relative;
+    width: 56%;
+    overflow: hidden;
+  }
+  h6.aftr_contnt::after {
+    content: "";
+    position: absolute;
+    background: #fb4163;
+    height: 6px;
+    left: 459px;
+    bottom: 9px;
+    width: 100%;
+  }
+
+  .flx_wrp{
+  
+  display:flex; align-items:flex-end;}
+
+  .sell_btn{
+    z-index:99;
+  
+  }
+
+  .red_btn{
+  background: linear-gradient(180deg,rgba(250, 64, 98, 1) 0%, rgba(250, 34, 73, 1) 100%);
+    color: #FFFFFF;
+    padding: 15px 20px;
+    font-size:48px;
+    line-height:54px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 8px;
+    width:fit-content;
+  }
+
+   @media only screen and (max-width: 1699px){
+    .sell_btn{
+    font-size:34px;
+    line-height:40px;
+  
+  }
+
+  .bnnr_lrg_txt h1 {
+    font-size: 55px;
+    line-height: 62px;
+    }
+
+     h5 {
+    font-size: 42px;
+    line-height: 48px;}
+   }
+
+  @media only screen and (max-width: 1599px) {
+    .bnnr_lrg_txt h1 {
+      font-size: 45px;
+      line-height: 51px;
+    }
+    .bnnr_lrg_txt {
+      width: 65%;
+    }
+    h5 {
+      font-size: 40px;
+      line-height: 46px;
+    }
+  }
+
+ @media only screen and (max-width: 1399px){
+  h5 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    h6 {
+    font-size: 31px;
+    line-height: 38px;}
+ }
+
+
+  @media only screen and (max-width: 1366px) {
+    .bnnr_lrg_txt h1 {
+      font-size: 42px;
+      line-height: 49px;
+    }
+
+  
+  }
+
+  @media only screen and (max-width: 1199px) {
+    .bnnr_lrg_txt {
+      width: 100%;
+    }
+    .txt_h5 {
+      width: 100%;
+    }
+      .flx_wrp{
+      display:block;}
+
+      h6{
+      width:auto; margin-bottom:25px;  margin-right: 0px;
+      }
+
+      .sell_btn{
+    font-size:28px;
+    line-height:34px;
+    display:block;
+    margin:0 auto;
+  }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .bnnr_lrg_txt h1 {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    h5 {
+      font-size: 28px;
+      line-height: 36px;
+      margin-bottom: 20px;
+    }
+    h6 {
+      font-size: 30px;
+      line-height: 38px;
+      width: auto;
+    }
+    h6.aftr_contnt {
+      width: auto;
+    }
+    h6.aftr_contnt::after {
+      display: none;
+    }
+
+     .sell_btn{
+    font-size:22px;
+    line-height:28px;
+   
+  }
+  }
+
+  @media only screen and (max-width: 499px){
+   h5,h6{text-align:center;font-size: 21px;
+      line-height: 27px;}
+    .bnnr_lrg_txt h1 {
+      font-size: 26px;
+      line-height: 32px;
+          margin-bottom: 14px;
+    }
+  }
+`;
+
+const Vdocontnr = styled.div`
+  display: flex;
+
+  align-items: center;
+  margin-top: 50px;
+  width: 63%;
+
+  iframe {
+    border-radius: 6px; /* Example: Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Example: Shadow */
+    max-width: 100%; /* Responsive */
+    width: 100%;
+    height: 620px;
+    border: 17px solid #ffffff;
+  }
+  @media only screen and (max-width: 1366px) {
+    iframe {
+      height: 470px;
+    }
+  }
+
+  @media only screen and (max-width: 1199px) {
+    width: 100%;
+
+    iframe {
+      height: 550px;
+    }
+  }
+
+  @media only screen and (max-width: 499px) { 
+  margin-top: 25px; 
+  iframe {
+      height: 300px;
+    }
+  }
+`;
+
+// banner 2nd sec--------------------------//
+
+const BannerMainInner2 = styled.div`
+  position: relative;
+
+  .abs_black_dressed_girl {
+    position: absolute;
+    left: -10px;
+    bottom: -180px;
+    width: 750px;
+  }
+
+  @media only screen and (max-width: 1599px) {
+    .abs_black_dressed_girl {
+      left: -70px;
+    }
+  }
+
+  @media only screen and (max-width: 1399px) {
+   .abs_black_dressed_girl {
+    
+    left: 40px;
+    bottom: -50px;
+    width: 379px;
+  }
+
+  @media only screen and (max-width: 1199px) {
+    .abs_black_dressed_girl {
+      display: none;
+    }
+  }
+`;
+const Banner2ndSec = styled.div`
+  background: url(/image/left_boder.webp), url(/image/top_border.webp),
+    url(/image/right_border.webp), url(/image/bottom_border.webp);
+  background-size: auto auto, 100% auto, 15px 100%, auto auto;
+  background-repeat: no-repeat;
+  background-position: left top, top center, center right, bottom right;
+  padding: 15px;
+  position: relative;
+
+  .founder_btn{ position:absolute;
+    left:0;
+    bottom:0;
+    z-index:99;
+  
+  }
+
+  .red_btn{
+  background: linear-gradient(180deg,rgba(250, 64, 98, 1) 0%, rgba(250, 34, 73, 1) 100%);
+    color: #FFFFFF;
+    padding: 15px 20px;
+    font-size:48px;
+    line-height:54px;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 8px;
+    width:fit-content;
+  }
+
+@media only screen and (max-width: 1799px) {
+   .founder_btn{
+   font-size:30px;
+    line-height:36px;
+    bottom:35px;
+     left: 30px;
+   }
+  }
+
+  @media only screen and (max-width: 1399px) {
+   .founder_btn {
+        font-size: 18px;
+        line-height: 26px;
+        padding: 15px 20px;
+        bottom:0
+        }
+  
+  }
+
+  @media only screen and (max-width: 1199px) {
+    background: none;
+    border: 10px solid #fd5372;
+    border-radius: 12px;
+
+     .founder_btn{
+   font-size:26px;
+    line-height:32px;
+    bottom:0;
+    margin:25px auto;
+    position:relative;
+    display:block;
+    left:0;
+   }
+  }
+
+   @media only screen and (max-width: 768px){
+   
+   .founder_btn{
+   font-size:22px;
+    line-height:28px;}
+   
+   }
+
+    @media only screen and (max-width: 499px){
+   
+   .founder_btn{
+   font-size:16px;
+    line-height:22px; margin-bottom:12px;}
+   
+   }
+`;
+
+const Bnnr2ndTopTxtSec = styled.div`
+  position: relative;
+  padding-left: 230px;
+  padding-top: 20px;
+  margin-bottom: 30px;
+  padding-right: 20px;
+
+
+  .abs_diamond_img {
+    position: absolute;
+    left: 20px;
+    top: 30px;
+  }
+
+  h1 {
+    font-size: 60px;
+    line-height: 66px;
+    color: #9966cc;
+    font-weight: 700;
+  }
+  h5 {
+    font-size: 36px;
+    line-height: 42px;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+ @media only screen and (max-width: 1699px){
+  h1 {
+    font-size: 55px;
+    line-height: 61px;
+    }
+ 
+ }
+
+ 
+
+  @media only screen and (max-width: 1599px) {
+    h1 {
+      font-size: 50px;
+      line-height: 56px;
+    }
+
+    h5 {
+      font-size: 34px;
+      line-height: 40px;
+    }
+  }
+
+  @media only screen and (max-width: 1399px) {
+   
+      padding-left: 150px;
+      margin-bottom: 15px;
+
+    h1 {
+              font-size: 35px;
+        line-height: 42px;
+                margin-bottom: 10px;
+    }
+
+    h5 {
+              font-size: 22px;
+        line-height: 28px;
+    }
+
+  .abs_diamond_img {
+   
+    left: 20px;
+    top: 30px;
+    width: 110px;
+}
+  }
+
+  @media only screen and (max-width: 768px){
+  .abs_diamond_img {
+    left: 50%;
+    top: 15px;
+    transform: translateX(-50%);
+  }
+    padding-left:0px; 
+     padding-top: 125px;
+         padding-right: 0px;
+
+    h1 {
+        font-size: 34px;
+        line-height: 40px;
+    }
+
+    // h5 {
+    //     font-size: 26px;
+    //     line-height: 32px;
+    // }
+  }
+
+   @media only screen and (max-width: 499px){
+
+   margin-bottom: 20px; text-align: center;
+   
+   h1 {
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    h5 {
+        font-size: 20px;
+        line-height: 26px;
+    }
+   }
+`;
+
+const Bnnr2ndLftPaddSec = styled.div`
+  padding-left: 720px;
+  padding-right: 20px;
+
+  .second_lft_padd_inn h3 {
+    font-size: 48px;
+    line-height: 54px;
+    color: #262727;
+    font-weight: 800;
+    margin-bottom: 60px;
+  }
+  .second_lft_padd_inn .txt_icon_sec p {
+    font-size: 30px;
+    line-height: 36px;
+    color: #262727;
+    font-weight: 400;
+    position: relative;
+    padding-left: 95px;
+    margin-bottom: 60px;
+  }
+  .second_lft_padd_inn .txt_icon_sec p img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+  }
+
+  .second_lft_padd_inn .txt_icon_sec p:nth-of-type(2) img {
+    left: 10px;
+  }
+
+  @media only screen and (max-width: 1599px) {
+    padding-left: 605px;
+
+    .second_lft_padd_inn h3 {
+      font-size: 42px;
+      line-height: 49px;
+    }
+
+    .second_lft_padd_inn .txt_icon_sec p {
+      font-size: 26px;
+      line-height: 32px;
+    }
+  }
+
+  @media only screen and (max-width: 1399px) {
+     padding-left: 440px;
+
+    .second_lft_padd_inn h3 {
+        font-size: 32px;
+        line-height: 38px;
+        margin-bottom: 25px;
+    }
+
+    .second_lft_padd_inn .txt_icon_sec p {
+        font-size: 22px;
+        line-height: 28px;
+        padding-left: 50px;
+        margin-bottom: 28px;
+    }
+
+    .second_lft_padd_inn .txt_icon_sec p img {
+      width: 35px;
+    }
+
+ .second_lft_padd_inn .txt_icon_sec p:nth-of-type(1) img {
+    
+    width: 35px;
+}
+
+    .second_lft_padd_inn .txt_icon_sec p:nth-of-type(2) img {
+    left: 4px;
+    width: 30px;
+}
+
+
+  }
+
+  @media only screen and (max-width: 1199px) {
+    padding-left: 0px;
+    padding-right: 0px;
+
+    // .second_lft_padd_inn h3 {
+    //   margin-bottom: 40px;
+    // }
+
+    .second_lft_padd_inn .txt_icon_sec p:nth-last-of-type(1) {
+      margin-bottom: 20px;
+    }
+  }
+
+    @media only screen and (max-width: 768px){
+   
+    //  .second_lft_padd_inn h3 {
+    //     font-size: 34px;
+    //     line-height: 40px;
+    //     margin-bottom: 30px;
+    //  }
+
+    // .second_lft_padd_inn .txt_icon_sec p {
+    //     font-size: 24px;
+    //     line-height: 30px;
+    //      margin-bottom: 40px;
+    //          padding-left: 65px;
+    // }
+
+  // .second_lft_padd_inn .txt_icon_sec p img {
+   
+  //   top: 5px;
+  //   transform: unset;
+  //   width: 42px;
+  //   }
+
+    // .second_lft_padd_inn .txt_icon_sec p:nth-of-type(2) img {
+    //     left: 0px;
+    // }
+}
+
+@media only screen and (max-width: 499px){
+
+.second_lft_padd_inn h3 {
+        font-size: 25px;
+        line-height: 31px;
+        margin-bottom: 20px;
+        text-align: center;
+     }
+
+     .second_lft_padd_inn .txt_icon_sec p {
+                 font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 20px;
+    }
+
+    
+}
+`;
