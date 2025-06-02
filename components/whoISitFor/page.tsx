@@ -1,31 +1,13 @@
+'use client';
+
 import { Grid } from '@mui/material'
 import Image from 'next/image'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import enTranslations from '@/app/landingpage1/en.json';
-import esTranslations from '@/app/landingpage1/es.json';
+import { useTranslation } from "@/app/hooks/useTranslation"
 
 const WhoIsItSec = () => {
-  const [translations, setTranslations] = useState(enTranslations);
-  const [currentLanguage, setCurrentLanguage] = useState('en');
-
-  useEffect(() => {
-    const handleLanguageChange = () => {
-      const lang = document.cookie.split('; ').find(row => row.startsWith('lang='))?.split('=')[1] || 'en';
-      setCurrentLanguage(lang);
-      setTranslations(lang === 'es' ? esTranslations : enTranslations);
-    };
-
-    // Initial load
-    handleLanguageChange();
-
-    // Listen for language changes
-    window.addEventListener('languageChanged', handleLanguageChange);
-
-    return () => {
-      window.removeEventListener('languageChanged', handleLanguageChange);
-    };
-  }, []);
+  const { t } = useTranslation('landingpageOne');
 
   return (
     <>
@@ -41,13 +23,13 @@ const WhoIsItSec = () => {
                 height={150}
                 alt="Image"
               />
-                <h1>{translations.whosItFor.headline}</h1>
+                <h1>{t('whosItFor.headline')}</h1>
             </TopTxtSec>
 
             <Grid container spacing={3} className="flex_grid">
                <Grid size={{ xs: 12, sm:6, lg: 4 }} className="grid_item">
                 <div className='img_txt_wrpr'>
-                    <h2>{translations.whosItFor.roles[0].title}</h2>
+                    <h2>{t('whosItFor.roles.0.title')}</h2>
                     <div className='img_wrp'>
                         <Image src="/image/blk2_img1_sc.webp" width={714} height={525} alt='Image'/>
                     </div>
@@ -56,7 +38,7 @@ const WhoIsItSec = () => {
 
                <Grid size={{ xs: 12, sm:6, lg: 4 }} className="grid_item">
                 <div className='img_txt_wrpr'>
-                    <h2>{translations.whosItFor.roles[1].title}</h2>
+                    <h2>{t('whosItFor.roles.1.title')}</h2>
                     <div className='img_wrp'>
                         <Image src="/image/blk2_img2.webp" width={714} height={525} alt='Image'/>
                     </div>
@@ -65,7 +47,7 @@ const WhoIsItSec = () => {
 
                <Grid size={{ xs: 12, sm:6, lg: 4 }} className="grid_item">
                 <div className='img_txt_wrpr'>
-                    <h2>{translations.whosItFor.roles[2].title}</h2>
+                    <h2>{t('whosItFor.roles.2.title')}</h2>
                     <div className='img_wrp'>
                         <Image src="/image/blk2_img3.webp" width={714} height={525} alt='Image'/>
                     </div>
@@ -74,8 +56,8 @@ const WhoIsItSec = () => {
             </Grid>
 
             <TextSecBottom>
-               <h4>{translations.whosItFor.summary}</h4>
-               <h3>{translations.whosItFor.note}</h3>
+               <h4>{t('whosItFor.summary')}</h4>
+               <h3>{t('whosItFor.note')}</h3>
             </TextSecBottom>
 
         </Block2SecInn>

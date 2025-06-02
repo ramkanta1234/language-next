@@ -1,35 +1,14 @@
+'use client';
+
 import { Button } from "@mui/material";
 import Image from "next/image";
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import LanguageDropdown from "../LanguageDropdown/page";
-
-// Import your translation files
-import enTranslations from "@/app/landingpage1/en.json";
-import esTranslations from "@/app/landingpage1/es.json";
+import { useTranslation } from "@/app/hooks/useTranslation"
 
 const BannerSec = forwardRef<HTMLDivElement>((props, ref) => {
-  const [translations, setTranslations] = useState(enTranslations);
-  const [currentLanguage, setCurrentLanguage] = useState('en');
-
-  // Handle language change
-  useEffect(() => {
-    const handleLanguageChange = () => {
-      const lang = document.cookie.split('; ').find(row => row.startsWith('lang='))?.split('=')[1] || 'en';
-      setCurrentLanguage(lang);
-      setTranslations(lang === 'es' ? esTranslations : enTranslations);
-    };
-
-    // Initial load
-    handleLanguageChange();
-
-    // Listen for language changes
-    window.addEventListener('languageChanged', handleLanguageChange);
-
-    return () => {
-      window.removeEventListener('languageChanged', handleLanguageChange);
-    };
-  }, []);
+  const { t, language, changeLanguage } = useTranslation('landingpageOne');
 
   const handleScrollToForm = () => {
     if (ref && typeof ref !== 'function' && ref.current) {
@@ -51,29 +30,23 @@ const BannerSec = forwardRef<HTMLDivElement>((props, ref) => {
                   height={201}
                 />
               </Logo>
-              <LanguageDropdown />
+              <LanguageDropdown onChangeLanguage={changeLanguage} currentLanguage={language} />
             </div>
 
             <BannerTxtSec>
-              <h5>{translations.hero.welcome}</h5>
+              <h5>{t('hero.welcome')}</h5>
               <div className="bnnr_lrg_txt">
-                <h1>{translations.hero.headline1}</h1>
-                <h1>{translations.hero.headline2}</h1>
-                <h1>
-                  {translations.hero.launch}
-                </h1>
+                <h1>{t('hero.headline1')}</h1>
+                <h1>{t('hero.headline2')}</h1>
+                <h1>{t('hero.launch')}</h1>
               </div>
               <div className="txt_h5">
-                <h5>
-                  {translations.hero.question}
-                </h5>
+                <h5>{t('hero.question')}</h5>
               </div>
               <div className="flx_wrp">
-                <h6>
-                  {translations.hero.subheadline}
-                </h6>
+                <h6>{t('hero.subheadline')}</h6>
                 <Button onClick={handleScrollToForm} className="red_btn sell_btn">
-                  {translations.hero.cta_button}
+                  {t('hero.cta_button')}
                 </Button>
               </div>
             </BannerTxtSec>
@@ -102,31 +75,31 @@ const BannerSec = forwardRef<HTMLDivElement>((props, ref) => {
                   height={150}
                   width={188}
                 />
-                <h1>{translations.digitalGold.headline}</h1>
-                <h5>
-                  {translations.digitalGold.subheadline}
-                </h5>
+                <h1>{t('digitalGold.headline')}</h1>
+                <h5>{t('digitalGold.subheadline')}</h5>
               </Bnnr2ndTopTxtSec>
               <Bnnr2ndLftPaddSec>
                 <section className="second_lft_padd_inn">
-                  <h3>{translations.digitalGold.intro}</h3>
+                  <h3>{t('digitalGold.intro')}</h3>
                   <div className="txt_icon_sec">
-                    {translations.digitalGold.benefits.map((benefit, index) => (
-                      <p key={index}>
-                        <Image
-                          src={`/image/${['vdo_logo', 'clip_logo', 'dollar_s_logo', 'globe_logo', 'launcher_logo'][index]}.webp`}
-                          width={70}
-                          height={80}
-                          alt="Image"
-                        />
-                        <span>{benefit}</span>
-                      </p>
-                    ))}
+                    {Array.isArray(t('digitalGold.benefits'))
+                      ? t('digitalGold.benefits').map((benefit:any, index:any) => (
+                        <p key={index}>
+                          <Image
+                            src={`/image/${['vdo_logo', 'clip_logo', 'dollar_s_logo', 'globe_logo', 'launcher_logo'][index]}.webp`}
+                            width={70}
+                            height={80}
+                            alt="Image"
+                          />
+                          <span>{benefit}</span>
+                        </p>
+                      ))
+                      : null}
                   </div>
                 </section>
               </Bnnr2ndLftPaddSec>
               <Button onClick={handleScrollToForm} className="founder_btn red_btn">
-                {translations.digitalGold.cta_button}
+                {t('digitalGold.cta_button')}
               </Button>
             </Banner2ndSec>
           </CommonWidth>
